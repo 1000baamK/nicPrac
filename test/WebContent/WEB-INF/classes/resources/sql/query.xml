@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis">
+	
+	<resultMap type="Member" id="MemberResultSet">
+		<result column="MEMBER_NO" property="memberNo"/>
+		<result column="MEMBER_ID" property="memberId"/>
+		<result column="MEMBER_PWD" property="memberPwd"/>
+		<result column="EMAIL" property="email"/>
+		<result column="NAME" property="name"/>
+	</resultMap>
+	
+	<resultMap type="Account" id="AccountResultSet">
+		<result column="MEMBER_NO" property="memberNo"/>
+		<result column="BANK_CODE" property="bankCode"/>
+		<result column="ACCOUNT_NUMBER" property="accountNumber"/>
+		<result column="BALANCE" property="balance"/>
+	</resultMap>
+	
+	<insert id="insertMember">
+	INSERT INTO	MEMBER
+	VALUES(MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPwd}, #{email}, #{name})
+	</insert>
+	
+	<select id="selectIdCheck" resultType="_int">
+	SELECT COUNT(*)
+	FROM MEMBER
+	WHERE MEMBER_ID = #{memberId}
+	</select>
+	
+	
+	<select id="selectMember" resultMap="MemberResultSet">
+SELECT *
+FROM MEMBER
+WHERE MEMBER_ID = #{memberId}
+	</select>
+	
+	<select id="selectAccount" resultMap="AccountResultSet">
+		SELECT *
+		FROM ACCOUNT
+		WHERE MEMBER_NO = #{memberNo}
+	</select>
+</mapper>

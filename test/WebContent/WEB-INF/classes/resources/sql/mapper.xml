@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- 회원 추가 -->
+	<!-- <entry key="insertMember">
+		INSERT INTO MEMBER(MEMBER_NO, MEMBER_ID, MEMBER_PWD, EMAIL, NAME)
+		VALUES(MEMBER_SEQ.NEXTVAL, ?, ?, ?, ?)
+	</entry>
+	
+	중복아이디 체크
+	<entry key="selectIdCheck">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID = ?
+	</entry>
+	
+	회원 검색
+	<entry key="selectMember">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID = ?
+	</entry>
+	
+	Account 조회
+	<entry key="selectAccount">
+		SELECT *
+		FROM ACCOUNT
+		WHERE MEMBER_NO = ?
+	</entry>
+	<entry key="selectMember2">
+SELECT *
+FROM MEMBER
+	</entry> -->
+
+</properties>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mappers SYSTEM "root.dtd">
+<mappers>
+<mapper id="insertMember">
+        <sql><![CDATA[INSERT INTO MEMBER(MEMBER_NO, MEMBER_ID, MEMBER_PWD, EMAIL, NAME) VALUES(MEMBER_SEQ.NEXTVAL, ?, ?, ?, ?)]]></sql>
+        <description><![CDATA[회원가입]]></description>
+    </mapper>
+<mapper id="selectIdCheck">
+        <sql><![CDATA[SELECT * FROM MEMBER WHERE MEMBER_ID = ?]]></sql>
+        <description><![CDATA[아이디 찾기]]></description>
+    </mapper>
+<mapper id="selectMember">
+        <sql><![CDATA[SELECT * FROM MEMBER WHERE MEMBER_ID = ?]]></sql>
+        <description><![CDATA[로그인]]></description>
+    </mapper>
+<mapper id="selectAccount">
+        <sql><![CDATA[SELECT * FROM ACCOUNT WHERE MEMBER_NO = ?]]></sql>
+        <description><![CDATA[(개인)계좌 목록 조회]]></description>
+    </mapper>
+</mappers>

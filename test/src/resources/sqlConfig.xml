@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="resources/driver/driver.properties"/>
+
+  <settings>
+  	<setting name="jdbcTypeForNull" value="NULL"/>
+  </settings>
+
+	
+  <typeAliases>
+  	<typeAlias type="test.member.model.vo.Member" alias="Member"/>
+  	<typeAlias type="test.account.model.vo.Account" alias="Account"/>
+  </typeAliases>
+  
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${id}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+  	<mapper resource="resources/sql/query.xml" />
+  </mappers>
+  
+</configuration>

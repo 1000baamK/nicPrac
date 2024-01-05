@@ -1,0 +1,5 @@
+<!ELEMENT mappers (mapper+)>
+<!ELEMENT mapper (sql, description)>
+<!ATTLIST mapper id CDATA #REQUIRED>
+<!ELEMENT sql (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
